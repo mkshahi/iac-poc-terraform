@@ -1,0 +1,13 @@
+name: github actions pipeline for iac
+on: 
+ push: 
+   branches: [main]
+jobs:
+ validate:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v4
+  - uses: hashicorp/setup-terraform@v3  
+  - name: Terraform init
+  - run: terraform init
+    
